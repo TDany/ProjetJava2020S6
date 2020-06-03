@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import Vue.Utilisateur;
+import Modele.Utilisateur;
 import Vue.DaoFactory;
 
 /**

@@ -6,7 +6,7 @@
 package Vue;
 
 import java.util.List;
-import Vue.Utilisateur;
+import Modele.Utilisateur;
 
 /**
  *

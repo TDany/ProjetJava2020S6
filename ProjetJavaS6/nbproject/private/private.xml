@@ -3,19 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/projetjavas6/DaoFactory.java</file>
-            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/projetjavas6/UtilisateurDaoImpl.java</file>
-            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/projetjavas6/ProjetJavaS6.java</file>
+            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Controler/ProjetJavaS6.java</file>
+            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Vue/InterfaceConnect.java</file>
+            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/UtilisateurDAO.java</file>
             <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/TypeCours.java</file>
+            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/Utilisateur.java</file>
             <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/CoursDAO.java</file>
-            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/projetjavas6/UtilisateurDao.java</file>
             <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/TypeCoursDAO.java</file>
-            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/projetjavas6/Utilisateur.java</file>
+            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Vue/UtilisateurDaoImpl.java</file>
             <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/Seance.java</file>
             <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/Cours.java</file>
-            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/projetjavas6/InterfaceConnect.java</file>
             <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/DAO.java</file>
+            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Vue/DaoFactory.java</file>
             <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Modele/SeanceDAO.java</file>
+            <file>file:/Users/danytadrous/NetBeansProjects/ProjetJavaS6/src/Vue/UtilisateurDao.java</file>
         </group>
     </open-files>
 </project-private>
