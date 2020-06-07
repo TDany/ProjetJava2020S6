@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication6;
+package Vue;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -40,7 +40,7 @@ public class InterfaceAdmin extends JFrame {
         this.setTitle("INTERFACE PLANNING ADMIN");
         this.setSize(1000, 1000);
         this.setVisible(true);
-        this.setLayout(new GridLayout(16,8));
+        this.setLayout(new GridLayout(14,8));
         
         JLabel nameUser = new JLabel();
         nameUser.setText("Hi " + m_name);
@@ -100,7 +100,11 @@ public class InterfaceAdmin extends JFrame {
         this.add(ButtonRecherche);
         ButtonRecherche.addActionListener(new ButtonRechercherListener());
         
-        for (int i = 0; i < 2; i++) {
+        JButton ButtonRechercheEnListe = new JButton("Rechercher en liste");
+        this.add(ButtonRechercheEnListe);
+        ButtonRechercheEnListe.addActionListener(new ButtonRechercheEnListeListener());
+        
+        for (int i = 0; i < 1; i++) {
             JPanel panel = new JPanel();
             this.add(panel);
         }
@@ -180,7 +184,10 @@ public class InterfaceAdmin extends JFrame {
         this.add(heure910);
         
         for (int i = 0; i < 5; i++) {
-            JPanel lesCours910 = new JPanel();
+            JLabel lesCours910 = new JLabel();
+            lesCours910.setText("Pause");
+            lesCours910.setFont(new Font("Times New Roman", Font.ITALIC, 25));
+            lesCours910.setOpaque(true);
             lesCours910.setBackground(Color.white);
             this.add(lesCours910);
         }
@@ -216,7 +223,10 @@ public class InterfaceAdmin extends JFrame {
         this.add(heure1112);
         
         for (int i = 0; i < 5; i++) {
-            JPanel lesCours1112 = new JPanel();
+            JLabel lesCours1112 = new JLabel();
+            lesCours1112.setText("Pause");
+            lesCours1112.setFont(new Font("Times New Roman", Font.ITALIC, 25));
+            lesCours1112.setOpaque(true);
             lesCours1112.setBackground(Color.white);
             this.add(lesCours1112);
         }
@@ -234,7 +244,10 @@ public class InterfaceAdmin extends JFrame {
         this.add(heure1213);
         
         for (int i = 0; i < 5; i++) {
-            JPanel lesCours1213 = new JPanel();
+            JLabel lesCours1213 = new JLabel();
+            lesCours1213.setText("Pause");
+            lesCours1213.setFont(new Font("Times New Roman", Font.ITALIC, 25));
+            lesCours1213.setOpaque(true);
             lesCours1213.setBackground(Color.white);
             this.add(lesCours1213);
         }
@@ -288,7 +301,10 @@ public class InterfaceAdmin extends JFrame {
         this.add(heure1516);
         
         for (int i = 0; i < 5; i++) {
-            JPanel lesCours1516 = new JPanel();
+            JLabel lesCours1516 = new JLabel();
+            lesCours1516.setText("Pause");
+            lesCours1516.setFont(new Font("Times New Roman", Font.ITALIC, 25));
+            lesCours1516.setOpaque(true);
             lesCours1516.setBackground(Color.white);
             this.add(lesCours1516);
         }
@@ -309,42 +325,6 @@ public class InterfaceAdmin extends JFrame {
             JPanel lesCours1617 = new JPanel();
             lesCours1617.setBackground(Color.white);
             this.add(lesCours1617);
-        }
-        
-         for (int i = 0; i < 2; i++) {
-            JPanel panel = new JPanel();
-            this.add(panel);
-        }
-         
-        JLabel heure1718 = new JLabel();
-        heure1718.setText("17H - 18H");
-        heure1718.setFont(new Font("Times New Roman", Font.ITALIC, 25));
-        heure1718.setOpaque(true);
-        heure1718.setBackground(Color.white);
-        this.add(heure1718);
-        
-        for (int i = 0; i < 5; i++) {
-            JPanel lesCours1718 = new JPanel();
-            lesCours1718.setBackground(Color.white);
-            this.add(lesCours1718);
-        }
-        
-         for (int i = 0; i < 2; i++) {
-            JPanel panel = new JPanel();
-            this.add(panel);
-        }
-         
-        JLabel heure1819 = new JLabel();
-        heure1819.setText("18H - 19H");
-        heure1819.setFont(new Font("Times New Roman", Font.ITALIC, 25));
-        heure1819.setOpaque(true);
-        heure1819.setBackground(Color.white);
-        this.add(heure1819);
-        
-        for (int i = 0; i < 5; i++) {
-            JPanel lesCours1819 = new JPanel();
-            lesCours1819.setBackground(Color.white);
-            this.add(lesCours1819);
         }
         
          for (int i = 0; i < 8; i++) {
@@ -385,7 +365,17 @@ public class InterfaceAdmin extends JFrame {
 
         public void actionPerformed(ActionEvent e) {
 
-           new InterfaceModif();
+           new InterfaceMenuModif();
+            
+
+    }
+    }
+    
+    private class ButtonRechercheEnListeListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+           new InterfaceMenuRecherche();
             
 
     }

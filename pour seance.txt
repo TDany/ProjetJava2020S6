@@ -1,0 +1,34 @@
+public int getID_Prof(){
+        return  ID_Prof;
+    }
+    
+    public void setID_Prof(int  ID_Prof){
+        this.ID_Prof =  ID_Prof;
+    }
+
+    public int getID_Groupe(){
+        return  ID_Groupe;
+    }
+    
+    public void setID_Groupe(int  ID_Groupe){
+        this.ID_Groupe =  ID_Groupe;
+    }
+    
+    public int getID_Salle(){
+        return  ID_Salle;
+    }
+    
+    public void setID_Salle(int  ID_Salle){
+        this.ID_Salle =  ID_Salle;
+    }
+
+
+    private int ID_Prof;
+    private int ID_Groupe;
+    private int ID_Salle;
+    
+	this.ID_Prof = ID_Prof;
+        this.ID_Groupe = ID_Groupe;
+        this.ID_Salle = ID_Salle;
+
+public Seance(int Semaine, String Date, String HeureDebut, String HeureFin, int Etat, int IDCours, int IDType, String NomCours, String NomTypeCours, int ID_Prof, int ID_Groupe, int ID_Salle){

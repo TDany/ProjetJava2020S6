@@ -1,0 +1,180 @@
+public  ArrayList<Seance> afficherSeanceProf(int ID_Enseignant){
+       
+        ArrayList<Seance> seanceprof = new ArrayList<Seance>();
+        ResultSet rs = null;
+        ResultSet rs1 = null;
+        ResultSet rs2 = null;
+         
+        try {
+            PreparedStatement stmt = connect.prepareStatement("SELECT S.ID, S.Semaine, S.Date, S.Heure_Debut, S.Heure_Fin, S.Etat, S.ID_Cours, S.ID_Type"
+                    + " FROM seance S, enseignant E, seance_enseignants SE "
+                    + "WHERE E.ID_Utilisateur = "+ID_Enseignant+" "
+                    + "AND E.ID_Utilisateur = SE.ID_Enseignant "
+                    + "AND SE.ID_Seance = S.ID;");
+            rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                int ID = rs.getInt("S.ID");
+                int Semaine = rs.getInt("S.Semaine");
+                String Date = rs.getString("S.Date");
+                String HeureDebut = rs.getString("S.Heure_Debut");
+                String HeureFin = rs.getString("S.Heure_Fin");
+                int Etat = rs.getInt("S.Etat");
+                int IDCours = rs.getInt("S.ID_Cours") ;
+                int IDType = rs.getInt("S.ID_Type");
+                
+                PreparedStatement stmt1 = connect.prepareStatement("SELECT Nom FROM Cours WHERE ID = "+IDCours);
+                rs1 = stmt1.executeQuery();
+                
+                PreparedStatement stmt2 = connect.prepareStatement("SELECT Nom FROM Type_Cours WHERE ID = "+IDType);
+                rs2 = stmt2.executeQuery();
+                
+                while(rs1.next() && rs2.next()){
+                    String NomCours = rs1.getString("Nom");
+                    String NomTypeCours = rs2.getString("Nom");
+                    
+                    Seance seanceproff = new Seance();
+                    seanceproff.setID(ID);
+                    seanceproff.setSemaine(Semaine);
+                    seanceproff.setDate(Date);
+                    seanceproff.setHeureDebut(HeureDebut);
+                    seanceproff.setHeureFin(HeureFin);
+                    seanceproff.setEtat(Etat);
+
+                    seanceproff.setNomCours(NomCours);
+                    seanceproff.setNomTypeCours(NomTypeCours);
+
+                    seanceprof.add(seanceproff);
+                }
+                
+                
+                
+                
+            }
+            
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return seanceprof;
+        
+    }
+
+    public ArrayList<Seance> afficherSeanceGroupe(int id_groupe) {
+        
+        ArrayList<Seance> seancegroupe = new ArrayList<Seance>();
+        ResultSet rs = null;
+        ResultSet rs1 = null;
+        ResultSet rs2 = null;
+         
+        try {
+            PreparedStatement stmt = connect.prepareStatement("SELECT S.ID, S.Semaine, S.Date, S.Heure_Debut, S.Heure_Fin, S.Etat, S.ID_Cours, S.ID_Type"
+                    + " FROM seance S, groupe G, seance_groupes SG "
+                    + "WHERE G.ID = "+id_groupe+" "
+                    + "AND G.ID = SG.ID_Groupe "
+                    + "AND SG.ID_Seance = S.ID;");
+            rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                int ID = rs.getInt("S.ID");
+                int Semaine = rs.getInt("S.Semaine");
+                String Date = rs.getString("S.Date");
+                String HeureDebut = rs.getString("S.Heure_Debut");
+                String HeureFin = rs.getString("S.Heure_Fin");
+                int Etat = rs.getInt("S.Etat");
+                int IDCours = rs.getInt("S.ID_Cours") ;
+                int IDType = rs.getInt("S.ID_Type");
+                
+                PreparedStatement stmt1 = connect.prepareStatement("SELECT Nom FROM Cours WHERE ID = "+IDCours);
+                rs1 = stmt1.executeQuery();
+                
+                PreparedStatement stmt2 = connect.prepareStatement("SELECT Nom FROM Type_Cours WHERE ID = "+IDType);
+                rs2 = stmt2.executeQuery();
+                
+                while(rs1.next() && rs2.next()){
+                    String NomCours = rs1.getString("Nom");
+                    String NomTypeCours = rs2.getString("Nom");
+                    
+                    Seance seance = new Seance();
+                    seance.setID(ID);
+                    seance.setSemaine(Semaine);
+                    seance.setDate(Date);
+                    seance.setHeureDebut(HeureDebut);
+                    seance.setHeureFin(HeureFin);
+                    seance.setEtat(Etat);
+
+                    seance.setNomCours(NomCours);
+                    seance.setNomTypeCours(NomTypeCours);
+
+                    seancegroupe.add(seance);
+                }
+                
+                
+                
+                
+            }
+            
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return seancegroupe;
+        
+    }
+
+    public ArrayList<Seance> afficherSeanceSalle(int id_salle) {
+        ArrayList<Seance> seancesalle = new ArrayList<Seance>();
+        ResultSet rs = null;
+        ResultSet rs1 = null;
+        ResultSet rs2 = null;
+         
+        try {
+            PreparedStatement stmt = connect.prepareStatement("SELECT S.ID, S.Semaine, S.Date, S.Heure_Debut, S.Heure_Fin, S.Etat, S.ID_Cours, S.ID_Type"
+                    + " FROM seance S, salle Sa, seance_salles SS "
+                    + "WHERE Sa.ID = "+id_salle+" "
+                    + "AND Sa.ID = SS.ID_Salle "
+                    + "AND SS.ID_Seance = S.ID;");
+            rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                int ID = rs.getInt("S.ID");
+                int Semaine = rs.getInt("S.Semaine");
+                String Date = rs.getString("S.Date");
+                String HeureDebut = rs.getString("S.Heure_Debut");
+                String HeureFin = rs.getString("S.Heure_Fin");
+                int Etat = rs.getInt("S.Etat");
+                int IDCours = rs.getInt("S.ID_Cours") ;
+                int IDType = rs.getInt("S.ID_Type");
+                
+                PreparedStatement stmt1 = connect.prepareStatement("SELECT Nom FROM Cours WHERE ID = "+IDCours);
+                rs1 = stmt1.executeQuery();
+                
+                PreparedStatement stmt2 = connect.prepareStatement("SELECT Nom FROM Type_Cours WHERE ID = "+IDType);
+                rs2 = stmt2.executeQuery();
+                
+                while(rs1.next() && rs2.next()){
+                    String NomCours = rs1.getString("Nom");
+                    String NomTypeCours = rs2.getString("Nom");
+                    
+                    Seance seance = new Seance();
+                    seance.setID(ID);
+                    seance.setSemaine(Semaine);
+                    seance.setDate(Date);
+                    seance.setHeureDebut(HeureDebut);
+                    seance.setHeureFin(HeureFin);
+                    seance.setEtat(Etat);
+
+                    seance.setNomCours(NomCours);
+                    seance.setNomTypeCours(NomTypeCours);
+
+                    seancesalle.add(seance);
+                }
+                
+                
+                
+                
+            }
+            
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return seancesalle;
+    }
